@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditorWindow</class>
+ <widget class="QMainWindow" name="EditorWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew_Scene"/>
+    <addaction name="actionOpen_Scene"/>
+    <addaction name="actionSave_Scene"/>
+    <addaction name="actionSave_scene_as"/>
+    <addaction name="separator"/>
+    <addaction name="actionNew_project"/>
+    <addaction name="actionOpen_project"/>
+    <addaction name="actionSave_project"/>
+    <addaction name="separator"/>
+    <addaction name="actionRun_script"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit_2"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <widget class="QMenu" name="menuSet_children_as_spine_path">
+     <property name="title">
+      <string>Set children as spine path</string>
+     </property>
+     <addaction name="actionNon_cyclic"/>
+     <addaction name="actionCyclic"/>
+    </widget>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionCut"/>
+    <addaction name="actionDuplicate"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+    <addaction name="actionDelete"/>
+    <addaction name="actionSelectall"/>
+    <addaction name="actionDeselectall"/>
+    <addaction name="separator"/>
+    <addaction name="actionReset_to_default"/>
+    <addaction name="separator"/>
+    <addaction name="actionReset_position"/>
+    <addaction name="actionReset_rotation"/>
+    <addaction name="actionReset_scale"/>
+    <addaction name="actionEnable_disable"/>
+    <addaction name="actionEnable_all"/>
+    <addaction name="actionUnparent"/>
+    <addaction name="actionParent_to_last"/>
+    <addaction name="separator"/>
+    <addaction name="actionToggle_update"/>
+    <addaction name="actionColor_wheel"/>
+    <addaction name="actionShow_component_animation"/>
+    <addaction name="separator"/>
+    <addaction name="actionStop_test_animation"/>
+    <addaction name="separator"/>
+    <addaction name="actionRebuild_navigation_data"/>
+    <addaction name="actionRender_Zone_Cubemap"/>
+    <addaction name="actionAdd_children_to_SM_group"/>
+    <addaction name="menuSet_children_as_spine_path"/>
+   </widget>
+   <widget class="QMenu" name="menuCreate">
+    <property name="title">
+     <string>Create</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuUI_Layout">
+    <property name="title">
+     <string>UI-Layout</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionInspector"/>
+    <addaction name="actionAttribute_inspetor"/>
+    <addaction name="actionResource_browser"/>
+    <addaction name="actionConsole"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuCreate"/>
+   <addaction name="menuUI_Layout"/>
+   <addaction name="menuView"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNew_Scene">
+   <property name="text">
+    <string>New scene</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen_Scene">
+   <property name="text">
+    <string>Open scene</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave_Scene">
+   <property name="text">
+    <string>Save scene</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSave_scene_as">
+   <property name="text">
+    <string>Save scene as</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionAs_replicated">
+   <property name="text">
+    <string>As replicated...</string>
+   </property>
+  </action>
+  <action name="actionAs_local">
+   <property name="text">
+    <string>As local...</string>
+   </property>
+  </action>
+  <action name="actionNew_project">
+   <property name="text">
+    <string>New project</string>
+   </property>
+  </action>
+  <action name="actionOpen_project">
+   <property name="text">
+    <string>Open project</string>
+   </property>
+  </action>
+  <action name="actionSave_project">
+   <property name="text">
+    <string>Save project</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>Redo</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string>Cut</string>
+   </property>
+  </action>
+  <action name="actionDuplicate">
+   <property name="text">
+    <string>Duplicate</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="text">
+    <string>Copy</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="text">
+    <string>Paste</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </action>
+  <action name="actionSelectall">
+   <property name="text">
+    <string>Select all</string>
+   </property>
+  </action>
+  <action name="actionDeselectall">
+   <property name="text">
+    <string>Deselect all</string>
+   </property>
+  </action>
+  <action name="actionReset_to_default">
+   <property name="text">
+    <string>Reset to default</string>
+   </property>
+  </action>
+  <action name="actionReset_position">
+   <property name="text">
+    <string>Reset position</string>
+   </property>
+  </action>
+  <action name="actionReset_rotation">
+   <property name="text">
+    <string>Reset rotation</string>
+   </property>
+  </action>
+  <action name="actionReset_scale">
+   <property name="text">
+    <string>Reset scale</string>
+   </property>
+  </action>
+  <action name="actionEnable_disable">
+   <property name="text">
+    <string>Enable/disable</string>
+   </property>
+  </action>
+  <action name="actionEnable_all">
+   <property name="text">
+    <string>Enable all</string>
+   </property>
+  </action>
+  <action name="actionUnparent">
+   <property name="text">
+    <string>Unparent</string>
+   </property>
+  </action>
+  <action name="actionParent_to_last">
+   <property name="text">
+    <string>Parent to last</string>
+   </property>
+  </action>
+  <action name="actionToggle_update">
+   <property name="text">
+    <string>Toggle update</string>
+   </property>
+  </action>
+  <action name="actionColor_wheel">
+   <property name="text">
+    <string>Color wheel</string>
+   </property>
+  </action>
+  <action name="actionShow_component_animation">
+   <property name="text">
+    <string>Show component icons</string>
+   </property>
+  </action>
+  <action name="actionStop_test_animation">
+   <property name="text">
+    <string>Stop test animation</string>
+   </property>
+  </action>
+  <action name="actionRebuild_navigation_data">
+   <property name="text">
+    <string>Rebuild navigation data</string>
+   </property>
+  </action>
+  <action name="actionRender_Zone_Cubemap">
+   <property name="text">
+    <string>Render Zone Cubemap</string>
+   </property>
+  </action>
+  <action name="actionAdd_children_to_SM_group">
+   <property name="text">
+    <string>Add children to SM-group</string>
+   </property>
+  </action>
+  <action name="actionNon_cyclic">
+   <property name="text">
+    <string>Non-cyclic</string>
+   </property>
+  </action>
+  <action name="actionCyclic">
+   <property name="text">
+    <string>cyclic</string>
+   </property>
+  </action>
+  <action name="actionInspector">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Inspector window</string>
+   </property>
+  </action>
+  <action name="actionAttribute_inspetor">
+   <property name="text">
+    <string>Attribute inspector</string>
+   </property>
+  </action>
+  <action name="actionResource_browser">
+   <property name="text">
+    <string>Resource browser</string>
+   </property>
+  </action>
+  <action name="actionRun_script">
+   <property name="text">
+    <string>Run script</string>
+   </property>
+  </action>
+  <action name="actionExit_2">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionConsole">
+   <property name="text">
+    <string>Console</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
